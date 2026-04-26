@@ -5,9 +5,17 @@ document.addEventListener('DOMContentLoaded', () => {
   const pageCountEl = document.getElementById('pageCount');
   const totalCountEl = document.getElementById('totalCount');
 
-  // Load keywords from storage
-  chrome.storage.sync.get({ keywords: [] }, (data) => {
+  const enableToggle = document.getElementById('enableToggle');
+
+  // Load keywords and enabled state from storage
+  chrome.storage.sync.get({ keywords: [], enabled: true }, (data) => {
+    enableToggle.checked = data.enabled;
     renderKeywords(data.keywords);
+  });
+
+  // Toggle switch listener
+  enableToggle.addEventListener('change', (e) => {
+    chrome.storage.sync.set({ enabled: e.target.checked });
   });
 
   // Get initial stats and set interval
