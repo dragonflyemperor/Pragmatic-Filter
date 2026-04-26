@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div class="container">
+    <h2>Keyword Filter</h2>
+    
+    <div class="stats-container">
+      <div class="stat-box">
+        <span class="stat-value" id="pageCount">0</span>
+        <span class="stat-label">Blocked on Page</span>
+      </div>
+      <div class="stat-box">
+        <span class="stat-value" id="totalCount">0</span>
+        <span class="stat-label">Total Blocked</span>
+      </div>
+    </div>
+
+    <div class="input-group">
+      <input type="text" id="keywordInput" placeholder="Add a keyword (e.g. korupsi)">
+      <button id="addButton">Add</button>
+    </div>
+    <ul id="keywordList"></ul>
+  </div>
+  <script src="popup.js"></script>
+</body>
+</html>
